@@ -1,0 +1,29 @@
+{
+  "name": "matrix-feeder",
+  "version": "0.0.1",
+  "description": "A matrix bot that mirrors media from defined channels to a dedicated channel.",
+  "main": "feeder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dragonchaser/matrix-feeder.git"
+  },
+  "keywords": [
+    "matrix",
+    "synapse",
+    "bot"
+  ],
+  "author": "Christian Richter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dragonchaser/matrix-feeder/issues"
+  },
+  "homepage": "https://github.com/dragonchaser/matrix-feeder#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jsonfile": "^6.0.1",
+    "matrix-bot-sdk": "^0.5.7"
+  }
+}
