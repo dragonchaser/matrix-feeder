@@ -18,7 +18,7 @@ MIT see [LICENSE](https://github.com/dragonchaser/matrix-feeder/blob/master/LICE
   $> git clone https://github.com/dragonchaser/matrix-feeder
   $> cd matrix-feeder
   $> npm install
-- copy config-example.json to config.json & edit
+- copy `config/config-example.json` to `config/config.json` & edit
 
   **WARNING:** `targetRoomId` must not be present in the list of monitored Rooms, otherwise this will result in loops & lots of spam.
 
