@@ -1,10 +1,10 @@
 # matrix-feeder
 
-Matrix feeder is a matrix bot that monitors defined channels for images and posts them to another channel.
+Matrix feeder is a matrix bot that monitors defined channels for media and posts them to another channel.
 
 ## Why
 
-I have lots of channels where hobbiests post railway related photos, usually there is lots of noise in between the images so I decided to channel them into one to be able to see the images alone.
+I have lots of rooms where hobbiests post railway related photos and videos, usually there is lots of noise between them so I decided to channel these into one room to be able to see them as a feed.
 
 ## License
 
