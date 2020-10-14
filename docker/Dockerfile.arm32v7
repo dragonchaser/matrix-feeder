@@ -1,4 +1,4 @@
-FROM node:latest
+FROM arm32v7/node:latest
 LABEL maintainer="dragonchaser <matrix-feeder@datenschmutz.space>"
 COPY qemu-arm-static /usr/bin
 RUN git clone https://github.com/dragonchaser/matrix-feeder /matrix-feeder
