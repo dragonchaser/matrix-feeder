@@ -22,3 +22,17 @@ MIT see [LICENSE](https://github.com/dragonchaser/matrix-feeder/blob/master/LICE
   ```
   $> node feeder.js
   ```
+
+### Docker
+
+#### run
+  ```
+  $> docker run -v/path/to/you/config.json:/matrix-feeder/config.json dragonchaser/matrix-feeder:latest
+  ```
+
+#### build
+  ```
+  $> git clone https://github.com/dragonchaser/matrix-feeder
+  $> cd matrix-feeder/docker
+  $> docker build . -t <imagename>:<tag>
+  ```
