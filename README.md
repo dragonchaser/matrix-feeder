@@ -33,7 +33,7 @@ MIT see [LICENSE](https://github.com/dragonchaser/matrix-feeder/blob/master/LICE
 #### run
 
   ```bash
-  $> docker run -v/path/to/you/config.json:/matrix-feeder/config.json dragonchaser/matrix-feeder:latest
+  $> docker run -v/path/to/you/config.json:/matrix-feeder/config/config.json dragonchaser/matrix-feeder:latest
   ```
 
 #### build
