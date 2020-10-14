@@ -22,11 +22,11 @@ client.on("room.message", (roomId, event) => {
   const info = event["content"]["info"]
   const url = event["content"]["url"]
 
-  // TODO: add support for other things here, have an array of relayed messages in the config and check with includes
-  if(roomId != config.targetRoomId && type == 'm.image') {
+  if(roomId != config.targetRoomId && config.relayTypes.includes(type)) {
+    console.dir(event)
     client.sendMessage(config.targetRoomId, {
       "sender" : sender,
-      "msgtype": "m.image",
+      "msgtype": type,
       "body": body,
       "info": info,
       "url": url

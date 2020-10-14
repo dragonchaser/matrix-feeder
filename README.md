@@ -28,6 +28,10 @@ MIT see [LICENSE](https://github.com/dragonchaser/matrix-feeder/blob/master/LICE
   $> node feeder.js
   ```
 
+- invite the bot to the channels of your choice
+
+  **NOTE:** The bot will only relay media if the room is listet in the `monitorChannels` field in the config!
+
 ### Docker
 
 #### run

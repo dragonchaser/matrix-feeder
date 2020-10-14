@@ -1,6 +1,6 @@
 {
   "name": "matrix-feeder",
-  "version": "0.0.1",
+  "version": "v0.1.0",
   "description": "A matrix bot that mirrors media from defined channels to a dedicated channel.",
   "main": "feeder.js",
   "scripts": {
@@ -25,5 +25,8 @@
   "devDependencies": {
     "jsonfile": "^6.0.1",
     "matrix-bot-sdk": "^0.5.7"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }

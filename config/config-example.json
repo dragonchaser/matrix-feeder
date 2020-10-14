@@ -7,5 +7,9 @@
     "!yoursourceroomeid0:matrix.your-homeserver.org",
     "!yoursourceroomeid1:matrix.your-homeserver.org",
     "!yoursourceroomeid2:matrix.your-homeserver.org"
-    ]
+    ],
+  "relayTypes" : [
+    "m.image",
+    "m.video"
+  ]
 }
