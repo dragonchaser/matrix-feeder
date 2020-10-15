@@ -23,7 +23,6 @@ client.on("room.message", (roomId, event) => {
   const url = event["content"]["url"]
 
   if(roomId != config.targetRoomId && config.relayTypes.includes(type)) {
-    console.dir(event)
     client.sendMessage(config.targetRoomId, {
       "sender" : sender,
       "msgtype": type,
