@@ -11,5 +11,7 @@
   "relayTypes" : [
     "m.image",
     "m.video"
-  ]
+  ],
+  "extractYoutubeLinks": true,
+  "showYoutubeTitle": true
 }
