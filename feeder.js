@@ -36,28 +36,30 @@ client.on("room.message", (roomId, event) => {
     }
     if(config.extractYoutubeLinks && type == "m.text") {
       link = body.match(/https?:\/\/[^\ ]*youtu[^\ ]*/g)[0]
-      msg = link
-      if(config.showYoutubeTitle) {
-        request(link, function(err, _res, body) {
-          if (err) return console.error(err);
-          title = ""
-          let $ = cheerio.load(body);
-          title = $('title').text();
-          if(title != "") {
-            msg = `${link} - ${title}`
-          } else {
-            msg = `${link}`
-          }
+      if( link != "") {
+        msg = link
+        if(config.showYoutubeTitle) {
+          request(link, function(err, _res, body) {
+            if (err) return console.error(err);
+            title = ""
+            let $ = cheerio.load(body);
+            title = $('title').text();
+            if(title != "") {
+              msg = `${link} - ${title}`
+            } else {
+              msg = `${link}`
+            }
+            client.sendMessage(config.targetRoomId, {
+              "msgtype": "m.text",
+              "body": msg,
+            });
+          })
+        } else {
           client.sendMessage(config.targetRoomId, {
             "msgtype": "m.text",
             "body": msg,
           });
-        })
-      } else {
-        client.sendMessage(config.targetRoomId, {
-          "msgtype": "m.text",
-          "body": msg,
-        });
+        }
       }
     }
   }
