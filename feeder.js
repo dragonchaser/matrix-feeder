@@ -35,29 +35,29 @@ client.on("room.message", (roomId, event) => {
       });
     }
     if(config.extractYoutubeLinks && type == "m.text") {
-      link = body.match(/https?:\/\/[^\ ]*youtu[^\ ]*/g)[0]
-      msg = link
-      if(config.showYoutubeTitle) {
-        request(link, function(err, _res, body) {
-          if (err) return console.error(err);
-          title = ""
-          let $ = cheerio.load(body);
-          title = $('title').text();
-          if(title != "") {
-            msg = `${link} - ${title}`
-          } else {
-            msg = `${link}`
-          }
+      link_matches = body.match(/https?:\/\/[^\ ]*youtu[^\ ]*/g)
+      if( link_matches && link_matches.length > 0) {
+        msg = link_matches[0]
+        if(config.showYoutubeTitle) {
+          request(msg, function(err, _res, body) {
+            if (err) return console.error(err);
+            title = ""
+            let $ = cheerio.load(body);
+            title = $('title').text();
+            if(title != "") {
+              msg = `${msg} - ${title}`
+            }
+            client.sendMessage(config.targetRoomId, {
+              "msgtype": "m.text",
+              "body": msg,
+            });
+          })
+        } else {
           client.sendMessage(config.targetRoomId, {
             "msgtype": "m.text",
             "body": msg,
           });
-        })
-      } else {
-        client.sendMessage(config.targetRoomId, {
-          "msgtype": "m.text",
-          "body": msg,
-        });
+        }
       }
     }
   }
