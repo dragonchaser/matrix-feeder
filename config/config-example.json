@@ -2,7 +2,7 @@
   "homeServerUrl": "https://matrix.your-homeserver.org",
   "targetRoomId": "!yourtargetroomeid:matrix.your-homeserver.org",
   "accessToken": "youraccesstokencanbeobtainedthroughriot",
-  "storage": "bot.json",
+  "storage": "config/bot.json",
   "monitorChannels": [
     "!yoursourceroomeid0:matrix.your-homeserver.org",
     "!yoursourceroomeid1:matrix.your-homeserver.org",
