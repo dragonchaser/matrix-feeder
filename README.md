@@ -4,7 +4,7 @@ Matrix feeder is a matrix bot that monitors defined channels for media and posts
 
 ## Why
 
-I have lots of rooms where hobbiests post railway related photos and videos, usually there is lots of noise between them so I decided to channel these into one room to be able to see them as a feed.
+I have lots of rooms where hobbyists post railway related photos and videos, usually there is lots of noise between them so I decided to channel these into one room to be able to see them as a feed.
 
 ## License
 
