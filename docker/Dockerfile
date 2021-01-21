@@ -1,7 +1,7 @@
 FROM node:latest
-LABEL maintainer="dragonchaser <matrix-feeder@datenschmutz.space>"
-RUN git clone https://github.com/dragonchaser/matrix-feeder /matrix-feeder
-WORKDIR /matrix-feeder
+LABEL maintainer="devdevjeff <matrix-announcement-bot@nonsense.xyz>"
+RUN git clone https://github.com/dragonchaser/matrix-announcement-bot /matrix-announcement-bot
+WORKDIR /matrix-announcement-bot
 RUN npm install
-CMD node feeder.js
+CMD node announcer.js
 
