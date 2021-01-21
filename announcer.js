@@ -24,10 +24,10 @@ client.on("room.message", (roomId, event) => {
   const info = event["content"]["info"]
   const url = event["content"]["url"]
   
-  for (i in config.targetRoomId) {
-  if(roomId != config.targetRoomId[i]) {
-    if(config.relayTypes.includes(type)) {
-      client.sendMessage(config.targetRoomId[i], {
+ for (target_room_id in config.targetRoomId) { // config.targetRoomIds waere besser
+  if(roomId != target_room_id) {
+  if(config.relayTypes.includes(type)) {
+  client.sendMessage(target_room_id, {
         "msgtype": type,
         "body": body,
         "info": info,
