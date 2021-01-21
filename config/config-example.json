@@ -10,7 +10,8 @@
     ],
   "relayTypes" : [
     "m.image",
-    "m.video"
+    "m.video",
+    "m.text"
   ],
   "extractYoutubeLinks": true,
   "showYoutubeTitle": true
