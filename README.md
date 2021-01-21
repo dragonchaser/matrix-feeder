@@ -1,6 +1,6 @@
 # matrix-announcement-bot
 
-Matrix feeder is a matrix bot that monitors defined channels for messages and posts them to other channels.
+Matrix Announcement Bot is a matrix bot that monitors defined channels for messages and posts them to other channels.
 Mostly the code is a fork of https://github.com/dragonchaser/matrix-feeder/.
 
 ## Why
