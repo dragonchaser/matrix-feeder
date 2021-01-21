@@ -1,26 +1,26 @@
 {
-  "name": "matrix-feeder",
+  "name": "matrix-announcement-bot",
   "version": "v0.1.0",
-  "description": "A matrix bot that mirrors media from defined channels to a dedicated channel.",
-  "main": "feeder.js",
+  "description": "A matrix bot that mirrors messages from defined channels to dedicated channels. Mostly a fork of https://github.com/dragonchaser/matrix-feeder/",
+  "main": "announcer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dragonchaser/matrix-feeder.git"
+    "url": "git+https://github.com/devdevjeff/matrix-announcement-bot.git"
   },
   "keywords": [
     "matrix",
     "synapse",
     "bot"
   ],
-  "author": "Christian Richter",
+  "author": "DevDevJeff",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dragonchaser/matrix-feeder/issues"
+    "url": "https://github.com/devdevjeff/matrix-announcement-bot/issues"
   },
-  "homepage": "https://github.com/dragonchaser/matrix-feeder#readme",
+  "homepage": "https://github.com/devdevjeff/matrix-announcement-bot#readme",
   "dependencies": {},
   "devDependencies": {
     "cheerio": "^1.0.0-rc.3",
