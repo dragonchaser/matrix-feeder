@@ -18,6 +18,4 @@
     "m.video",
     "m.text"
   ],
-  "extractYoutubeLinks": true,
-  "showYoutubeTitle": true
 }
