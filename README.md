@@ -1,22 +1,24 @@
-# matrix-feeder
+# matrix-announcement-bot
 
-Matrix feeder is a matrix bot that monitors defined channels for media and posts them to another channel.
+Matrix feeder is a matrix bot that monitors defined channels for messages and posts them to other channels.
+Mostly the code is a fork of https://github.com/dragonchaser/matrix-feeder/.
 
 ## Why
 
-I have lots of rooms where hobbyists post railway related photos and videos, usually there is lots of noise between them so I decided to channel these into one room to be able to see them as a feed.
+In our case we needed a Bot, which can send messages to a bulk of rooms. Now our moderation team can send a message in a dedicated room and the bots will send it to the 
+predefinied rooms without revealing the moderation team members account.
 
 ## License
 
-MIT see [LICENSE](https://github.com/dragonchaser/matrix-feeder/blob/master/LICENSE) file in this repository.
+MIT see [LICENSE](https://github.com/devdevjeff/matrix-announcement-bot/blob/master/LICENSE) file in this repository.
 
 ## Install & Run
 
 - dependencies
 
   ```bash
-  $> git clone https://github.com/dragonchaser/matrix-feeder
-  $> cd matrix-feeder
+  $> git clone https://github.com/devdevjeff/matrix-announcement-bot
+  $> cd matrix-announcement-bot
   $> npm install
 - copy `config/config-example.json` to `config/config.json` & edit
 
@@ -25,12 +27,12 @@ MIT see [LICENSE](https://github.com/dragonchaser/matrix-feeder/blob/master/LICE
 - run
 
   ```bash
-  $> node feeder.js
+  $> node announcer.js
   ```
 
 - invite the bot to the channels of your choice
 
-  **NOTE:** The bot will only relay media if the room is listet in the `monitorChannels` field in the config!
+  **NOTE:** The bot will only relay messages if the room is listet in the `monitorChannels` field in the config!
 
 ### Docker
 
@@ -39,21 +41,21 @@ MIT see [LICENSE](https://github.com/dragonchaser/matrix-feeder/blob/master/LICE
 - x86_64
   ```bash
   $> docker run \
-     -v/path/to/you/config.json:/matrix-feeder/config/config.json \
-     dragonchaser/matrix-feeder:latest
+     -v/path/to/you/config.json:/matrix-announcement-bot/config/config.json \
+     devdevjeff/matrix-announcement-bot:latest
   ```
 
 - arm32v7 (raspberry pi 2 & 3)
   ```bash
   $> docker run \
-     -v/path/to/you/config.json:/matrix-feeder/config/config.json \
-     dragonchaser/matrix-feeder:latest-arm32v7
+     -v/path/to/you/config.json:/matrix-announcement-bot/config/config.json \
+     devdevjeff/matrix-announcement-bot:latest-arm32v7
   ```
 
 #### build
 
   ```bash
-  $> git clone https://github.com/dragonchaser/matrix-feeder
-  $> cd matrix-feeder
+  $> git clone https://github.com/devdevjeff/matrix-announcement-bot
+  $> cd matrix-announcement-bot
   $> docker build -f docker/Dockerfile -t <imagename>:<tag> .
   ```
