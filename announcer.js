@@ -35,4 +35,5 @@ client.on("room.message", (roomId, event) => {
         });
       }
     }
+  }
 });
