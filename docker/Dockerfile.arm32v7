@@ -1,8 +1,9 @@
 FROM arm32v7/node:latest
 LABEL maintainer="dragonchaser <matrix-feeder@datenschmutz.space>"
 COPY qemu-arm-static /usr/bin
-RUN git clone https://github.com/dragonchaser/matrix-feeder /matrix-feeder
-WORKDIR /matrix-feeder
+RUN git clone https://github.com/devdevjeff/matrix-announcement-bot /matrix-announcement-bot
+WORKDIR /matrix-announcement-bot
 RUN npm install
-CMD node feeder.js
+CMD node announcer.js
+
 
