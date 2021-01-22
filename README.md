@@ -47,12 +47,6 @@ Also avaiable at Dockerhub -> https://hub.docker.com/r/devdevjeff/matrix-announc
      devdevjeff/matrix-announcement-bot:latest
   ```
 
-- arm32v7 (raspberry pi 2 & 3)
-  ```bash
-  $> docker run \
-     -v/path/to/you/config.json:/matrix-announcement-bot/config/config.json \
-     devdevjeff/matrix-announcement-bot:latest-arm32v7
-  ```
 
 #### build
 
