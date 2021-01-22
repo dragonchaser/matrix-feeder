@@ -13,7 +13,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 const client = new MatrixClient(config.homeServerUrl, config.accessToken, new SimpleFsStorageProvider(config.storage));
 
 AutojoinRoomsMixin.setupOnClient(client);
-client.start().then(() => console.log("LOG: Client started!"));
+client.start().then(() => console.log("LOG: Client started. V0.2!"));
 
 client.on("room.message", (roomId, event) => {
   if (! config.monitorChannels.includes(roomId)) return
@@ -36,7 +36,7 @@ client.on("room.message", (roomId, event) => {
       }
     }
   }
-  client.unstableApis.addReactionToEvent(roomId, event['event_id'], '✅');
+  await client.unstableApis.addReactionToEvent(roomId, event['event_id'], '✅');
   await delay(10000);
-  client.redactEvent(roomId, event['event_id']);
+  await client.redactEvent(roomId, event['event_id'], reason["Preventing Multiple Posting"]);
 });
