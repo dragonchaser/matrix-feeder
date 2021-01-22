@@ -14,7 +14,7 @@ const client = new MatrixClient(config.homeServerUrl, config.accessToken, new Si
 
 AutojoinRoomsMixin.setupOnClient(client);
 client.on("room.message", handleCommand);
-client.start().then(() => console.log("LOG: Client started. V0.25!"));
+client.start().then(() => console.log("LOG: Client started. V0.30!"));
 
 async function handleCommand(roomId, event) {
   if (! config.monitorChannels.includes(roomId)) return
