@@ -36,6 +36,8 @@ MIT see [LICENSE](https://github.com/devdevjeff/matrix-announcement-bot/blob/mas
 
 ### Docker
 
+Also avaiable at Dockerhub -> https://hub.docker.com/repository/docker/devdevjeff/matrix-docker-bot
+
 #### run
 
 - x86_64
