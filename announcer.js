@@ -38,5 +38,5 @@ client.on("room.message", (roomId, event) => {
   }
 client.unstableApis.addReactionToEvent(roomId, event['event_id'], '✅');
 delay(10000);
-client.redactEvent(roomId, event['event_id'], reason["Preventing Multiple Posting"]);
+client.redactEvent(roomId, event['event_id'], "Preventing Multiple Posting");
 });
