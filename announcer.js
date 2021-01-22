@@ -9,7 +9,7 @@ var config = jsonfile.readFileSync(configfile)
 const MatrixClient = sdk.MatrixClient;
 const SimpleFsStorageProvider = sdk.SimpleFsStorageProvider;
 const AutojoinRoomsMixin = sdk.AutojoinRoomsMixin;
-
+const delay = ms => new Promise(res => setTimeout(res, ms));
 const client = new MatrixClient(config.homeServerUrl, config.accessToken, new SimpleFsStorageProvider(config.storage));
 
 AutojoinRoomsMixin.setupOnClient(client);
@@ -36,4 +36,7 @@ client.on("room.message", (roomId, event) => {
       }
     }
   }
+  client.unstableApis.addReactionToEvent(roomId, event['event_id'], '✅');
+  await delay(10000);
+  client.redactEvent(roomId, event['event_id']);
 });
