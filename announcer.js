@@ -36,7 +36,7 @@ client.on("room.message", (roomId, event) => {
       }
     }
   }
-  await client.unstableApis.addReactionToEvent(roomId, event['event_id'], '✅');
-  await delay(10000);
-  await client.redactEvent(roomId, event['event_id'], reason["Preventing Multiple Posting"]);
+client.unstableApis.addReactionToEvent(roomId, event['event_id'], '✅');
+delay(10000);
+client.redactEvent(roomId, event['event_id'], reason["Preventing Multiple Posting"]);
 });
