@@ -13,10 +13,12 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 const client = new MatrixClient(config.homeServerUrl, config.accessToken, new SimpleFsStorageProvider(config.storage));
 
 AutojoinRoomsMixin.setupOnClient(client);
+client.on("room.message", handleCommand);
 client.start().then(() => console.log("LOG: Client started. V0.25!"));
 
-client.on("room.message", (roomId, event) => {
+async function handleCommand(roomId, event) {
   if (! config.monitorChannels.includes(roomId)) return
+  if (event["sender"] === await client.getUserId()) return;
   if (! event["content"]) return;
   const sender = event["sender"];
   const body = event["content"]["body"];
@@ -36,7 +38,11 @@ client.on("room.message", (roomId, event) => {
       }
     }
   }
-client.unstableApis.addReactionToEvent(roomId, event['event_id'], '✅');
-delay(10000);
-client.redactEvent(roomId, event['event_id'], 'Preventing Multiple Posting');
+  client.unstableApis.addReactionToEvent(roomId, event['event_id'], '✅');
+  const replyBody = "Announcement send. Messagesource will be deleted in 10 seconds to prevent multiple posting"
+  const reply = RichReply.createFor(roomId, event, replyBody, replyBody);
+  reply["msgtype"] = "m.notice";
+  client.sendMessage(roomId, reply);
+  await delay(10000);
+  client.redactEvent(roomId, event['event_id'], 'Preventing Multiple Posting');
 });
