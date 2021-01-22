@@ -13,7 +13,7 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 const client = new MatrixClient(config.homeServerUrl, config.accessToken, new SimpleFsStorageProvider(config.storage));
 
 AutojoinRoomsMixin.setupOnClient(client);
-client.start().then(() => console.log("LOG: Client started. V0.2!"));
+client.start().then(() => console.log("LOG: Client started. V0.25!"));
 
 client.on("room.message", (roomId, event) => {
   if (! config.monitorChannels.includes(roomId)) return
