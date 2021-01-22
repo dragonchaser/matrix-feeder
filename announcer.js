@@ -14,7 +14,7 @@ const client = new MatrixClient(config.homeServerUrl, config.accessToken, new Si
 
 AutojoinRoomsMixin.setupOnClient(client);
 client.on("room.message", handleCommand);
-client.start().then(() => console.log("LOG: Client started. V0.30!"));
+client.start().then(() => console.log("LOG: Client started. V0.35!"));
 
 async function handleCommand(roomId, event) {
   if (! config.monitorChannels.includes(roomId)) return
@@ -38,7 +38,12 @@ async function handleCommand(roomId, event) {
       }
     }
   }
+  
+  try {
   client.unstableApis.addReactionToEvent(roomId, event['event_id'], '✅');
+  }
+  catch {
+  }
   const replyBody = "Announcement send. Messagesource will be deleted in 10 seconds to prevent multiple posting"
   const reply = RichReply.createFor(roomId, event, replyBody, replyBody);
   reply["msgtype"] = "m.notice";
